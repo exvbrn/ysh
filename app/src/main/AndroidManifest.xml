@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name=".YandexSmartHomeApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/Theme.YandexSmartHome"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.YandexSmartHome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Конфигурация виджета устройства -->
+        <activity
+            android:name=".widget.WidgetConfigureActivity"
+            android:exported="true"
+            android:label="@string/widget_device_label"
+            android:theme="@style/Theme.YandexSmartHome" />
+
+        <!-- Конфигурация виджета сценария -->
+        <activity
+            android:name=".widget.ScenarioWidgetConfigureActivity"
+            android:exported="true"
+            android:label="@string/widget_scenario_label"
+            android:theme="@style/Theme.YandexSmartHome" />
+
+        <!-- Виджет устройства -->
+        <receiver 
+            android:name=".widget.DeviceWidgetReceiver" 
+            android:exported="true"
+            android:label="@string/widget_device_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.example.yandexsmarthome.ACTION_TOGGLE_DEVICE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/device_widget_info" />
+        </receiver>
+
+        <!-- Виджет сценария -->
+        <receiver 
+            android:name=".widget.ScenarioWidgetReceiver" 
+            android:exported="true"
+            android:label="@string/widget_scenario_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.example.yandexsmarthome.ACTION_RUN_SCENARIO" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/scenario_widget_info" />
+        </receiver>
+
+    </application>
+</manifest>

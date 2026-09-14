@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="40dp"
+    android:minHeight="40dp"
+    android:updatePeriodMillis="900000"
+    android:initialLayout="@layout/widget_device"
+    android:resizeMode="none"
+    android:widgetCategory="home_screen"
+    android:configure="com.example.yandexsmarthome.widget.WidgetConfigureActivity"
+    android:label="@string/widget_device_label"
+    android:description="@string/widget_device_description" />

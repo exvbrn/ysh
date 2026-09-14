@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Умный Дом</string>
+    <string name="widget_device_label">Устройство</string>
+    <string name="widget_scenario_label">Сценарий</string>
+    <string name="widget_device_description">Виджет для включения/выключения устройства Умного дома</string>
+    <string name="widget_scenario_description">Виджет для запуска сценария Умного дома</string>
+</resources>

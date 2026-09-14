@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="40dp"
+    android:minHeight="40dp"
+    android:updatePeriodMillis="0"
+    android:initialLayout="@layout/widget_scenario"
+    android:resizeMode="none"
+    android:widgetCategory="home_screen"
+    android:configure="com.example.yandexsmarthome.widget.ScenarioWidgetConfigureActivity"
+    android:label="@string/widget_scenario_label"
+    android:description="@string/widget_scenario_description" />
